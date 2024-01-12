@@ -1,0 +1,36 @@
+@model Pjesemarrje
+<div class="row">
+    <div class="col-6">
+        <h2>@ViewBag.aktivitetiNgaDb.Name</h2>
+        <p>@ViewBag.aktivitetiNgaDb.Description</p>
+        <p>Created By @ViewBag.aktivitetiNgaDb.Creator.FirstName</p>
+    </div>
+    
+@{
+    List<Pjesemarrje> pjesemarresit = ViewBag.aktivitetiNgaDb.Pjesemarresit;
+        @if(!pjesemarresit.Any(e=> e.UserId == ViewBag.UserId) ){
+            <div class="col-6">
+
+        <form asp-action="MerrPjese" asp-route-id="@ViewBag.aktivitetiNgaDb.AktivitetiId">
+                   <div>
+                <label asp-for="Description"></label>
+                <select asp-for="Description">
+                    <option value="MeDeshire">MeDeshire</option>
+                    <option value="PaDeshire">PaDeshire</option>
+                    <option value="AjtMo">AjtMo</option>
+                </select>
+                <span asp-validation-for="Description"></span>
+            </div>
+        
+  
+            <input type="submit" value="Merr Pjese">
+        </form>
+    </div>
+    }    
+}    
+    
+
+
+
+
+</div>

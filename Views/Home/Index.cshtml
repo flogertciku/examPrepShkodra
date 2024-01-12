@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-6">
+        <h2>Aktivitet</h2>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Nr Pjesemarresve</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var item in ViewBag.aktivitet)
+    {
+                <tr>
+      <th scope="row"> @item.AktivitetiId</th>
+      <td><a asp-action="Details" asp-route-id="@item.AktivitetiId"> @item.Name</a></td>
+      <td>@item.Pjesemarresit.Count</td>
+    </tr>
+    }
+  
+  </tbody>
+</table>
+
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@model Aktiviteti
+
+<div class="row">
+    <div class="col-12">
+        <form asp-action="AddAktiviteti" method="post">
+    
+                <div>
+                <label asp-for="Name"></label>
+                <input  asp-for="Name">
+                <span asp-validation-for="Name"></span>
+            </div>
+        
+                <div>
+                <label asp-for="Description"></label>
+                <input  asp-for="Description">
+                <span asp-validation-for="Description"></span>
+            </div>
+          \
+            <input type="submit" value="Add Aktiviteti">
+
+        </form>
+    </div>
+</div>
