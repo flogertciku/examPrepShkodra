@@ -35,6 +35,7 @@ public class HomeController : Controller
         _context= context;
         _logger = logger;
     }
+    
     [SessionCheck]
     public IActionResult Index()
     {
